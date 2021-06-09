@@ -45,5 +45,3 @@ print(dic)
 lista = [12, 13, 14, 15, 5, 6, 7]
 dic = {lista: i+1 for i, lista in enumerate(lista)}
 print([i for i in dic if dic[i] == i])
-
-# Ejercicio 7

@@ -39,45 +39,54 @@ def Recaudo( listas ):
      print(
      f'''
 Promedio impuestos Industria y comercio: {mean( IyC ) :,}
-{""}
+{"Se alcanzo la meta de recaudo" if mean( IyC ) >= 500000000 else "No se alcanzo la meta de recaudo"}
 
-     '''
-     )
+Promedio impuestos Predial: {mean( Pl ) :,}
+{"Se alcanzo la meta de recaudo" if mean( Pl ) >= 500000000 else "No se alcanzo la meta de recaudo"}
+
+Promedio impuestos Alcohol, cigarrillos y loterías: {mean( Ahl ) :,}
+{"Se alcanzo la meta de recaudo" if mean( Ahl ) >= 500000000 else "No se alcanzo la meta de recaudo"}
+
+Promedio impuestos Sobretasa a la gasolina: {mean( SoG ) :,}
+{"Se alcanzo la meta de recaudo" if mean( SoG ) >= 500000000 else "No se alcanzo la meta de recaudo"}
+     ''')
+
+
 dic = [
      {
           'Impuesto': 'Sobretasa a la gasolina',
           'Mes': 'Enero',
-          'Valor': 2512542
+          'Valor': 251422542
      },
      {
           'Impuesto': 'Predial',
           'Mes': 'Febrero',
-          'Valor': 2512542
+          'Valor': 2558002542
      },
      {
           'Impuesto': 'Alcohol, cigarrillos y loterías',
           'Mes': 'Enero',
-          'Valor': 2512542
+          'Valor': 2512079542
      },
      {
           'Impuesto': 'Industria y Comercio',
           'Mes': 'Marzo',
-          'Valor': 2512542
+          'Valor': 242512542
      },
      {
           'Impuesto': 'Industria y Comercio',
           'Mes': 'Febrero',
-          'Valor': 2512542
+          'Valor': 258512542
      },
      {
           'Impuesto': 'Predial',
           'Mes': 'Febrero',
-          'Valor': 2512542
+          'Valor': 8525012542
      },
      {
           'Impuesto': 'Alcohol, cigarrillos y loterías',
           'Mes': 'Marzo',
-          'Valor': 2512542
+          'Valor': 9320512542
      },
      {
           'Impuesto': 'Sobretasa a la gasolina',

@@ -3,12 +3,12 @@ from statistics import mean
 def Ventas( dic ):
      print(f'''================================================
 
-     Vendedor: {dic["Vendedor"]}
-     Ventas Enero: $ {dic["Enero"]}
-     Ventas Febrero: $ {dic["Febrero"]}
-     Ventas Marzo: $ {dic["Marzo"]}
+     Vendedor: {dic["Vendedor"]},
+     Ventas Enero: ${dic["Enero"] :,}
+     Ventas Febrero: ${dic["Febrero"] :,}
+     Ventas Marzo: ${dic["Marzo"] :,}
      
-     Promedio de ventas en el trimestre: ${round( mean( [dic["Enero"], dic["Febrero"], dic["Marzo"]] ) )}
+     Promedio de ventas en el trimestre: ${mean( [dic["Enero"], dic["Febrero"], dic["Marzo"]] ) :,.0f}
      '''
      )
 

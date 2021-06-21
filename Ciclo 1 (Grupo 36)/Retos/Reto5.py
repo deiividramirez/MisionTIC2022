@@ -11,8 +11,8 @@ def examen(ruta_archivo_csv: str) -> dict:
      
      dic = archivo.to_dict()
      
-     return f"""
-{tabla}
+     return f"""{tabla}
+
 
 {dic}
 """

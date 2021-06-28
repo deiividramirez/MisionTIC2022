@@ -1,4 +1,4 @@
-public class App {
+public class ejercicio1 {
 
     public static String saludo(String nombre){
         return "Hola "+nombre+" ! ";

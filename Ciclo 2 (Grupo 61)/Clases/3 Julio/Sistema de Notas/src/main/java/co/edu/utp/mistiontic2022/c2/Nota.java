@@ -5,7 +5,7 @@ public class Nota {
      private int escala100;
      private double escala5;
      private String cualitativa;
-     private String nombre;
+     // private String nombre;
 
      // Constructores
      Nota() {

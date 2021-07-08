@@ -36,7 +36,7 @@ public class Ejercicio7 {
                System.out.println("Otro número ? s/n");
 
                respuesta = sc2.nextLine();
-               if (respuesta == "s") {
+               if ( respuesta.equals( "s" ) ) {
                     System.out.println("Ok...sigamos\n");
                }
                else {

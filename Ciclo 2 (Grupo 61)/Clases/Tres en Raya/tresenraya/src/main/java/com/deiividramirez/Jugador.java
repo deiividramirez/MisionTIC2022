@@ -1,9 +1,9 @@
 package com.deiividramirez;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Jugador {
-     
+public abstract class Jugador {
      // Atributos
      public String nombre;
      public int movimientoLogico;
@@ -19,18 +19,18 @@ public class Jugador {
      // Metodos
 
      // ALEATORIO
-     public Casilla elegirCasillaAleatoria(ArrayList<Casilla> casillasLibres) {
-          
+     public Casilla elegirCasillaAleatoria(Tablero tablero) {
+          ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();
           Casilla casillaElegida = new Casilla();
-
           int MIN = 0;
           int MAX = casillasLibres.size();
           int indiceElegido = MIN + (int)( Math.random() * (MAX-MIN) );
-          
           casillaElegida = casillasLibres.get( indiceElegido );
-
           return casillaElegida;
-     
+     }
+
+     public void estrategiaAleatoria(Tablero tablero) {
+          realizarMovimiento( elegirCasillaAleatoria( tablero ), tablero );
      }
 
      public void realizarMovimiento(Casilla casilla, Tablero tablero) {
@@ -39,4 +39,14 @@ public class Jugador {
           tablero.casillas[fila][col].aplicarJugada(this.movimientoLogico, this.movimientoConsola);
      }
 
+     public void estategiaManual(Tablero tablero) {
+          Scanner sc = new Scanner(System.in);
+          System.out.println("Ingrese fila");
+          int inFila = sc.nextInt();
+          System.out.println("Ingrese columna");
+          int inCol = sc.nextInt();
+
+          tablero.casillas[inFila][inCol].aplicarJugada(this.movimientoLogico, this.movimientoConsola);
+
+     }
 }

@@ -8,13 +8,11 @@ public class App
     {
         System.out.println( "BIENVENIDO..." );
         Tablero tablero = new Tablero();
-        Jugador jugadorX = new Jugador("Juan", 10, "X");
+        JugadorX jugadorX = new JugadorX("Juan", 10, "X");
 
         tablero.mostrarTablero();
 
-        ArrayList<Casilla> casillasVacias = tablero.obtenerCasillasVacias();
-        Casilla casillaElegida = jugadorX.elegirCasillaAleatoria(casillasVacias);
-        jugadorX.realizarMovimiento(casillaElegida, tablero);
+        jugadorX.estrategiaAleatoria(tablero);
 
         tablero.mostrarTablero();
     }

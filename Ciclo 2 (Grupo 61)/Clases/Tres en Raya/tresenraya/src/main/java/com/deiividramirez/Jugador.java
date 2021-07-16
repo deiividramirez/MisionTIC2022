@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Jugador {
-     
+
      // Atributos
      public String nombre;
      public int movimientoLogico;
@@ -49,7 +49,7 @@ public abstract class Jugador {
           int inCol = sc.nextInt();
 
           tablero.casillas[inFila][inCol].aplicarJugada(this.movimientoLogico, this.movimientoConsola);
-
+          sc.close();
      }
 
      abstract void estrategiaEspecifica(Tablero tablero);

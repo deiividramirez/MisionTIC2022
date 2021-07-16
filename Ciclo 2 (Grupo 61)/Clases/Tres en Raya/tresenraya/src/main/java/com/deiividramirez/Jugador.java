@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Jugador {
+     
      // Atributos
      public String nombre;
      public int movimientoLogico;
@@ -21,12 +22,13 @@ public abstract class Jugador {
      // ALEATORIO
      public Casilla elegirCasillaAleatoria(Tablero tablero) {
           ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();
-          Casilla casillaElegida = new Casilla();
+          // Casilla casillaElegida = new Casilla();
           int MIN = 0;
           int MAX = casillasLibres.size();
           int indiceElegido = MIN + (int)( Math.random() * (MAX-MIN) );
-          casillaElegida = casillasLibres.get( indiceElegido );
-          return casillaElegida;
+          // casillaElegida = casillasLibres.get( indiceElegido );
+          // return casillaElegida;
+          return casillasLibres.get( indiceElegido );
      }
 
      public void estrategiaAleatoria(Tablero tablero) {
@@ -49,4 +51,6 @@ public abstract class Jugador {
           tablero.casillas[inFila][inCol].aplicarJugada(this.movimientoLogico, this.movimientoConsola);
 
      }
+
+     abstract void estrategiaEspecifica(Tablero tablero);
 }

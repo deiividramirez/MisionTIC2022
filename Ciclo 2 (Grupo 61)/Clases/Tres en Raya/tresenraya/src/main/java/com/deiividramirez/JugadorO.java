@@ -1,19 +1,18 @@
 package com.deiividramirez;
 
-public class JugadorX extends Jugador{
+import java.util.ArrayList;
+
+public class JugadorO extends Jugador{
 
      // Constructor
-     public JugadorX(String pNombre, int pMovLogico, String pMovCons) {
+     public JugadorO(String pNombre, int pMovLogico, String pMovCons) {
           super(pNombre, pMovLogico, pMovCons);
      }
 
      // Elegir casilla superior izquierda
      public Casilla elegirCasillaSI(Tablero tablero) {
-          // Casilla casillaElegida = new Casilla();
-          // ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();
-          // casillaElegida = casillasLibres.get(0);
-          // return casillaElegida;
-          return tablero.obtenerCasillasVacias().get(0);
+          ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();
+          return casillasLibres.get( casillasLibres.size()-1 );
      }
 
      // Implementar el método abstracto
@@ -22,3 +21,4 @@ public class JugadorX extends Jugador{
      }
      
 }
+

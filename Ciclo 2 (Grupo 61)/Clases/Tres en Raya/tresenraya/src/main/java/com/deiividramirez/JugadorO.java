@@ -9,6 +9,10 @@ public class JugadorO extends Jugador{
           super(pNombre, pMovLogico, pMovCons);
      }
 
+     JugadorO(String pNombreJugador){
+          super(pNombreJugador, ParametroLogico.JUGADOR_O.getValorLogico(), ParametroConsola.JUGADOR_O.getValorConsola());
+      }
+
      // Elegir casilla superior izquierda
      public Casilla elegirCasillaID(Tablero tablero) {
           ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();

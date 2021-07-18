@@ -6,6 +6,10 @@ public class JugadorX extends Jugador{
      public JugadorX(String pNombre, int pMovLogico, String pMovCons) {
           super(pNombre, pMovLogico, pMovCons);
      }
+     
+     JugadorX(String pNombreJugador){
+          super(pNombreJugador, ParametroLogico.JUGADOR_X.getValorLogico(), ParametroConsola.JUGADOR_X.getValorConsola());
+      }
 
      // Elegir casilla superior izquierda
      public Casilla elegirCasillaSI(Tablero tablero) {

@@ -110,25 +110,25 @@ public class Juego {
           //Ganador
 
           //Si JugadorO Gana
-          if(  sumatoriasFilas.contains( ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ) ||
+          if ( sumatoriasFilas.contains( ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ) ||
                sumatoriasColumnas.contains( ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ) ||
                sumatoriaDiagonal == ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ||
-               sumatoriaDiagonalInversa == ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ){
-               return ParametroLogico.JUGADOR_O;
+               sumatoriaDiagonalInversa == ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ) {
+               return ParametroLogico.JUGADOR_O; 
           }
 
           //Si JugadorX Gana
-          if(  sumatoriasFilas.contains(ParametroLogico.LINEA_JUGADOR_X.getValorLogico()) ||
+          if ( sumatoriasFilas.contains(ParametroLogico.LINEA_JUGADOR_X.getValorLogico()) ||
                sumatoriasColumnas.contains(ParametroLogico.LINEA_JUGADOR_X.getValorLogico()) ||
                sumatoriaDiagonal == ParametroLogico.LINEA_JUGADOR_X.getValorLogico() ||
-               sumatoriaDiagonalInversa == ParametroLogico.LINEA_JUGADOR_X.getValorLogico() ){
+               sumatoriaDiagonalInversa == ParametroLogico.LINEA_JUGADOR_X.getValorLogico() ) {
                return ParametroLogico.JUGADOR_X;
           }
 
           //Empate
           int sumatoriaCompleta = this.sumatoriaTablero();
-          if(  sumatoriaCompleta == ParametroLogico.EMPATE_INICIANDO_O.getValorLogico() ||
-               sumatoriaCompleta == ParametroLogico.EMPATE_INICIANDO_X.getValorLogico() ){
+          if ( sumatoriaCompleta == ParametroLogico.EMPATE_INICIANDO_O.getValorLogico() ||
+               sumatoriaCompleta == ParametroLogico.EMPATE_INICIANDO_X.getValorLogico() ) {
                return ParametroLogico.PARTIDA_EMPATADA;
           }
 
@@ -164,34 +164,34 @@ public class Juego {
 
                //Comportamiento arbitral de la clase
                ParametroLogico revision = this.revisarTablero();
-               if(revision == ParametroLogico.JUGADOR_O){
+               if ( revision == ParametroLogico.JUGADOR_O ) {
                     System.out.println("El Jugador O -> "+ this.jugadorO.nombre + " ha ganado!");
                     this.empate = false;
                     this.ganador = true;
                     this.valorGanador = ParametroLogico.JUGADOR_O;
                     break;
-               }else if(revision == ParametroLogico.JUGADOR_X){
+               }else if ( revision == ParametroLogico.JUGADOR_X ) {
                     System.out.println("El Jugador X -> "+ this.jugadorX.nombre + " ha ganado!");
                     this.empate = false;
                     this.ganador = true;
                     this.valorGanador = ParametroLogico.JUGADOR_X;
                     break;
-               }else if(revision == ParametroLogico.PARTIDA_EMPATADA){
+               }else if ( revision == ParametroLogico.PARTIDA_EMPATADA ) {
                     System.out.println("Empate!!!");
                     this.empate = true;
                     this.ganador = false;
                     this.valorGanador = ParametroLogico.PARTIDA_EMPATADA;
                     break;
-               }else if(revision == ParametroLogico.SIN_GANADOR){
+               }else if ( revision == ParametroLogico.SIN_GANADOR ) {
                     String quienJuega = this.turnoActual == ParametroLogico.JUGADOR_O ? "Jugador O "+this.jugadorO.nombre : "Jugador X "+this.jugadorX.nombre;
                     System.out.println("Jugando: "+quienJuega);
                     System.out.println("Aún no se decide la partida...");
                }
 
                //Alternar el turno
-               if(this.turnoActual == ParametroLogico.JUGADOR_O){
+               if (this.turnoActual == ParametroLogico.JUGADOR_O) {
                     this.turnoActual = ParametroLogico.JUGADOR_X;
-               }else{
+               }else {
                     this.turnoActual = ParametroLogico.JUGADOR_O;
                }
 

@@ -12,21 +12,21 @@ public class Organica extends Fruta{
 
      public Organica(String pNombre, double pPrecio){ 
           super(pNombre, pPrecio);
-          this.descuentoNacionales = DESCUENTO_NACIONALES_BASE;
-          this.subsidio = SUBSIDIO_BASE;
+          this.descuentoNacionales = Organica.DESCUENTO_NACIONALES_BASE;
+          this.subsidio = Organica.SUBSIDIO_BASE;
      } 
 
      public Organica(String pNombre, double pPrecio, int pGramosVenta) { 
           super(pNombre, pPrecio);
           super.gramosVenta = pGramosVenta;
-          this.descuentoNacionales = DESCUENTO_NACIONALES_BASE;
-          this.subsidio = SUBSIDIO_BASE;
+          this.descuentoNacionales = Organica.DESCUENTO_NACIONALES_BASE;
+          this.subsidio = Organica.SUBSIDIO_BASE;
      } 
 
      public Organica(String pNombre, double pPrecio, double pDescuentoNacionales) {
           super(pNombre, pPrecio);
           this.descuentoNacionales = pDescuentoNacionales;
-          this.subsidio = SUBSIDIO_BASE;
+          this.subsidio = Organica.SUBSIDIO_BASE;
      } 
 
      public Organica(String pNombre, double pPrecio, double pDescuentoNacionales, double pSubsidio){
@@ -47,10 +47,10 @@ public class Organica extends Fruta{
      //Métodos
      public double calcularPrecio() { 
           double precioVenta = super.calcularPrecio();
-          double precioOrganica = precioVenta * ( 1 + this.subsidio );
+          double precioOrganica = precioVenta + ( precioVenta * this.subsidio );
 
-          if ( !super.importada  && super.gramosVenta > GRAMAJE_MINIMO_DESCUENTO_NACIONAL) {
-               precioOrganica -= precioVenta * this.descuentoNacionales;
+          if ( !super.importada  && super.gramosVenta >= Organica.GRAMAJE_MINIMO_DESCUENTO_NACIONAL) {
+               precioOrganica -= precioVenta * Organica.DESCUENTO_NACIONALES_BASE;
           }
 
           return precioOrganica;

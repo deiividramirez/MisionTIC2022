@@ -20,28 +20,30 @@ public class Convencional extends Fruta{
      public Convencional(String pNombre, double pPrecio, double pRecargo, int pGradoAditamentos) { 
           super(pNombre, pPrecio);
           this.recargoConvencionales = pRecargo;
-          this.recargoConvencionales = pGradoAditamentos;
+          this.gradoAditamentos = pGradoAditamentos;
      }
 
      public Convencional(String pNombre, double pPrecio, double pRecargo, int pGradoAditamentos, int pGramosVenta, boolean pImportada) {
-          super(pNombre, pPrecio, pGramosVenta, pImportada);
+          super(pNombre, pPrecio);
+          super.gramosVenta = pGramosVenta;
+          super.importada = pImportada;
           this.recargoConvencionales = pRecargo;
-          this.recargoConvencionales = pGradoAditamentos;
+          this.gradoAditamentos = pGradoAditamentos;
      }
 
      public Convencional(String pNombre, double pPrecio, int pGramosVenta, boolean pImportada) {
           super(pNombre, pPrecio);
           super.gramosVenta = pGramosVenta;
           super.importada = pImportada;
-          this.recargoConvencionales = RECARGO_CONVENCIONALES_BASE;
      }
 
      //Métodos
      public double calcularPrecio(){
           double precioVenta = super.calcularPrecio();
-          double precioConvencional = precioVenta * ( 1 + this.recargoConvencionales);
-          precioConvencional += precioVenta * ( 0.1 * this.gradoAditamentos);
+          double precioConvencional = precioVenta + ( precioVenta * this.recargoConvencionales );
+          precioConvencional += precioVenta * ( 0.01 * this.gradoAditamentos );
           
           return precioConvencional;
      }
 }
+

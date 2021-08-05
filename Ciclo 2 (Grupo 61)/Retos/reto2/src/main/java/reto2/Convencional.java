@@ -35,6 +35,7 @@ public class Convencional extends Fruta{
           super(pNombre, pPrecio);
           super.gramosVenta = pGramosVenta;
           super.importada = pImportada;
+          this.recargoConvencionales = Convencional.RECARGO_CONVENCIONALES_BASE;
      }
 
      //Métodos

@@ -42,15 +42,6 @@ public class Fruta {
           return precioVenta;
       }
 
-     // Setter
-     public void setNombre(String nombre) {
-          this.nombre = nombre;
-     }
-
-     public void setPrecioBase(double precioBase) {
-          this.precioBase = precioBase;
-     }
-
      // Getter
      public String getNombre() {
           return nombre;

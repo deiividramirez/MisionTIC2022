@@ -1,6 +1,7 @@
 package reto2;
+// public chevrolet extends carro
 
-public class Organica extends Fruta{
+public class Organica extends Fruta {
 
      // Atributos
      private static final double DESCUENTO_NACIONALES_BASE = 0.05;

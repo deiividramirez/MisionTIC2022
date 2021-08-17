@@ -33,7 +33,7 @@ public class ProyectoRankeadoComprasDao {
             PreparedStatement statement = conexion.prepareStatement(consulta);
             ResultSet resultSet = statement.executeQuery();
 
-            while(resultSet.next()){
+            while ( resultSet.next() ) {
                 ProyectoRankeadoCompras proyecto = new ProyectoRankeadoCompras();
                 //proyecto.setIdProyecto(resultSet.getInt("ID_Proyecto"));
                 proyecto.setIdProyecto(resultSet.getInt(1));
@@ -48,7 +48,7 @@ public class ProyectoRankeadoComprasDao {
             statement.close();
 
 
-        } catch(SQLException e) {
+        } catch ( SQLException e ) {
             System.err.println("Error consultando los proyectos rankeados por compras! " + e );
         } finally {
             if ( conexion != null ) {

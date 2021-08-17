@@ -82,7 +82,7 @@ public class VistaRequerimientosReto4 {
 
             }
 
-        } catch(SQLException e) {
+        } catch ( SQLException e ) {
             System.err.println("Ha ocurrido un error!" + e.getMessage() );
         }
 
@@ -121,7 +121,7 @@ public class VistaRequerimientosReto4 {
                 System.out.println("Opción inválida!");
             }
 
-        } while(mainloop);
+        } while ( mainloop );
 
     }    
     

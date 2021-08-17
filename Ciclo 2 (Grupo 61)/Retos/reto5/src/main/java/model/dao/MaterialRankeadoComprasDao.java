@@ -44,16 +44,14 @@ public class MaterialRankeadoComprasDao {
             statement.close();
 
 
-        } catch (SQLException e) {
+        } catch ( SQLException e ) {
             System.err.println("Error consultando los proyectos rankeados por compras! " + e);
         } finally {
-            if (conexion != null) {
+            if ( conexion != null ) {
                 conexion.close();
             }
         }
-
         return request;
-        
     }
         
 }

@@ -40,7 +40,7 @@ public class BancoRankeadoAreaPromedioDao {
             resultSet.close();
             statement.close();
 
-        } catch(SQLException e) {
+        } catch( SQLException e ) {
             System.err.println("Error consultando bancos rankeados areaMax promedio: " + e);
         } finally {
             if ( conexion != null ) {
